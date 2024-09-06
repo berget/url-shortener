@@ -21,6 +21,7 @@ class ShortUrlService
     public function createShortUrl(string $originalUrl): string
     {
         $shortCode = $this->generateShortCode();
+
         $this->urlRepository->create([
             'original_url' => $originalUrl,
             'short_code' => $shortCode,

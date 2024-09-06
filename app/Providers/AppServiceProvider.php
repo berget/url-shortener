@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\ShortUrlRepository;
+use App\Repositories\ShortUrlRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->bind(ShortUrlRepositoryInterface::class, ShortUrlRepository::class);
     }
 
     /**
